@@ -15,7 +15,7 @@ class EventEmitter {
   emit(eventName, ...args) {
     const result = [];
     this.eventMap[eventName].forEach((callBack) => {
-      result.push(callBack());
+      result.push(callBack(...args));
     });
     return result;
   }
